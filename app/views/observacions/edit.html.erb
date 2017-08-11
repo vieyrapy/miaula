@@ -1,0 +1,17 @@
+<div class="container">
+<div class="row">
+	<div class="span4">
+			<h2 class="text-center text-muted">Editar dias</h2>
+	</div>
+
+	<div  class="span8">
+	
+			<%= render 'form', observacion: @observacion %>
+	
+			<%= link_to @observacion, class:"btn btn-success"  do %>
+			            <i class="glyphicon glyphicon-eye-open"></i>
+			           <% end %> |
+		<button type="button" class="btn btn-default"><%= link_to 'Atras', observacions_path %></button>
+	</div>
+</div>
+</div>

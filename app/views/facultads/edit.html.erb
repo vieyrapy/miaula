@@ -1,0 +1,18 @@
+<div class="container">
+<div class="row">
+	<div class="span4">
+			<h2 class="text-center text-muted">Editar Facultad</h2>
+
+	</div>
+
+	<div  class="span8">
+
+			<%= render 'form', facultad: @facultad %>
+
+			<%= link_to @facultad, class:" btn btn-info" do  %> 
+			              <i class="glyphicon glyphicon-eye-open"></i>
+			            <% end %> |
+			<button type="button" class="btn btn-defauld"><%= link_to 'Atras', facultads_path %></button>
+	</div>
+</div>
+</div>

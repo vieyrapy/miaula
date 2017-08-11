@@ -1,0 +1,35 @@
+<div class="container">
+<div class="row">
+	<div class="span4">
+		<p id="notice"><%= notice %></p>
+	</div>
+
+  <div class="span 8 ">
+		<table class="table table-striped">
+
+		  <tbody>
+		    <tr>
+		        <td><p>
+					  <strong>Nombrecarrera:</strong>
+					  <%= @registro_carrera.nombreCarrera %>
+					</p></td>
+
+				<td><p>
+					  <strong>Anho:</strong>
+					  <%= @registro_carrera.anho %>
+				</p></td>
+
+				<td><p>
+					  <strong>Semestre:</strong>
+					  <%= @registro_carrera.semestre %>
+				</p></td>
+
+				<td>
+					<%= link_to  edit_registro_carrera_path(@registro_carrera), class: "btn btn-success" do %> <i class="glyphicon glyphicon-pencil"></i><% end %> |
+					<button type="button" class="btn btn-defauld"> <%= link_to 'Atras', registro_carreras_path %> </button>
+				</td>
+			</tr>
+		</tbody>
+	</div>
+  </div>
+</div>

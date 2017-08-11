@@ -1,0 +1,27 @@
+<%= form_with(model: detalle_aula, local: true) do |form| %>
+  <% if detalle_aula.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(detalle_aula.errors.count, "error") %> prohibited this detalle_aula from being saved:</h2>
+
+      <ul>
+      <% detalle_aula.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    
+    <%= form.text_field :observacion, id: :detalle_aula_observacion, :class=>"form-control", placeholder: "observacion" %>
+  </div>
+
+  <div class="field">
+    
+    <%= form.text_field :aula_id, id: :aula_aula_id, :class=>"form-control", placeholder: "Id Aula" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

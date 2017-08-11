@@ -1,0 +1,65 @@
+<div class="container">
+<div class="row">
+  <div class="span4">
+      <p id="notice"><%= notice %></p>
+  </div>
+  <div class="span 8 ">
+      <table class="table table-striped">
+
+      <thead>
+          <tr>
+            <th>Facultad</th>
+            <th>Carrera</th>
+            <th>Año</th>
+            <th>Semestre</th>
+            <th>Aula</th>
+            <th>Dias</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+              <td><p>
+
+                <%= @asignacion_aula.facultad.nombre %>
+              </p></td>
+
+              <td><p>
+                
+                <%= @asignacion_aula.registro_carrera.nombreCarrera %>
+              </p></td>
+
+              <td><p>
+                
+                <%= @asignacion_aula.anho_carrera.anho %>
+              </p></td>
+
+
+                <td><p>
+                  
+                  <%= @asignacion_aula.semestre.nombreSemestre %>
+                </p></td>
+
+
+                <td><p>
+                  
+                  <%= @asignacion_aula.aula.nombre %>
+                </p></td>
+
+              <td><p>
+                  
+                  <%= @asignacion_aula.observacion.nombreDia %>
+              </p></td>
+
+
+            <td>  <%= link_to edit_asignacion_aula_path(@asignacion_aula),  class:"btn btn-info"  do %>
+                          <i class="glyphicon glyphicon-pencil"></i>
+                         <% end %> |
+              <button type="button" class="btn btn-defaul"><%= link_to 'Atras', asignacion_aulas_path %></button></td>
+        </tr>
+      </tbody>
+      </table>
+  </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Observacion:</strong>
+  <%= @detalle_aula.observacion %>
+</p>
+
+<%= link_to edit_detalle_aula_path(@detalle_aula), class:" btn btn-info" do  %> 
+              <i class="glyphicon glyphicon-pencil"></i>
+            <% end %>  %> |
+<button type="button" class="btn btn-default"><%= link_to 'Atras', detalle_aulas_path %></button>

@@ -1,0 +1,28 @@
+<div class="container">
+<div class="row">
+  <div class="span4">
+
+      <p id="notice"><%= notice %></p>
+
+  </div>
+  <div class="span 8 ">
+      <table class="table table-striped">
+
+        <tbody>
+          <tr>
+              <td><p>
+                <strong>Nombresemestre:</strong>
+        		<%= @semestre.nombreSemestre %>
+              </p></td>
+
+             <td> <%= link_to edit_semestre_path(@semestre), class:" btn btn-info" do  %> 
+                  <i class="glyphicon glyphicon-pencil"></i>
+                  <% end %> </button> | 
+              <button type="button" class="btn btn-default"><%= link_to 'Atras', semestres_path %></button>
+            </td>
+          </tr>
+
+        </tbody>
+    </div>
+  </div>
+</div>

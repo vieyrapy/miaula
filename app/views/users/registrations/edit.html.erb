@@ -1,0 +1,76 @@
+  <div class="login-page">
+  <div class="form">
+  
+  <link rel="stylesheet" media="all" href="/assets/style1.scss" />
+<h2>Editar Alumno</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </div>
+
+        <div align="center"><%= f.check_box :es_mujer, {}, true %> <%= f.label :es_mujer, "Mujer" %> </div> </br>
+        <div align="center" "><%= f.check_box :es_mujer, {}, false %> <%= f.label :es_mujer, "Hombre" %> </div></br>
+       
+
+
+
+        <div><%= f.label :fecha_nacimiento %>
+            <%= f.date_select :fecha_nacimiento, :start_year => 1975, :end_year => 2020 %></div>
+
+
+
+  <div class="field">
+    <%= f.label :facultad_id %>
+    <%= f.collection_select(:facultad_id, Facultad.all, :id, :nombre) %><br>
+    <%= f.label :registro_carrera_id %>
+    <%= f.collection_select(:registro_carrera_id, RegistroCarrera.all, :id, :nombreCarrera) %><br>
+    <%= f.label :anho_carrera_id %>
+    <%= f.collection_select(:anho_carrera_id, AnhoCarrera.all, :id, :anho) %><br>
+</div>
+
+
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Contraseña %> <i>(Deje en blanco si no desea cambiarlo)</i><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+    <% if @minimum_password_length %>
+      <em><%= @minimum_password_length %> caracteres como minimo</em>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :confirmar_contraseña %>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :contraseña_actual %> <i>(Necesitamos su contraseña actual para confirmar sus cambios)</i>
+    <%= f.password_field :current_password, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Acualizar" %>
+  </div>
+<% end %>
+
+<p> <%= button_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "¿Estás seguro?" }, method: :delete %></p>
+<button>
+<%= link_to "Atras", :back %>
+</button>
+
+
+
+</div>
+</div>

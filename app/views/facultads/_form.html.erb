@@ -1,0 +1,37 @@
+<%= form_with(model: facultad, local: true) do |form| %>
+  <% if facultad.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(facultad.errors.count, "error") %> prohibited this facultad from being saved:</h2>
+
+      <ul>
+      <% facultad.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="container">
+<div class="row">
+  <div class="span8">
+  <table class="table table-striped">
+
+        <tbody>
+          <tr>
+
+            <td><div class="field">
+              <%= form.text_field :nombre, id: :facultad_nombre, :class=>"form-control", placeholder: "Nombre" %>
+            </div></td>
+            
+
+            <td><div class="actions">
+              <%= form.submit %>
+            </div></td>
+          <% end %>
+        </tr>
+      </tbody>
+      </table>
+
+ </div>
+</div>
+</div>

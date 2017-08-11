@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Miaula</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<%= render 'layouts/menu' %>
+
+    <%= yield %>
+  </body>
+
+  <center><footer>
+  <a><img src="http://localhost:3000/tapiti_group.png" width="91" height="91"></a>
+  Todos los derechos reservados 2017, Tapiti Group.
+  </footer></center>
+</html>

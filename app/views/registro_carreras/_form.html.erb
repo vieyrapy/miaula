@@ -1,0 +1,42 @@
+ <%= form_with(model: registro_carrera, local: true) do |form| %>
+  <% if registro_carrera.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(registro_carrera.errors.count, "error") %> prohibited this registro_carrera from being saved:</h2>
+
+      <ul>
+      <% registro_carrera.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="container">
+<div class="row">
+  <div class="span8">
+
+    <table class="table table-striped">
+
+      <tbody>
+        <tr>
+
+          <td>  <div class="field">
+              <%= form.text_field :nombreCarrera, id: :registro_carrera_nombreCarrera, :class=>"form-control", placeholder: "Carrera" %>
+            </div>
+          </td>
+   <td><div class="field">
+        
+                  <%= form.collection_select(:facultad_id, Facultad.all, :id, :nombre, :class=>"form-control", placeholder: "Facultad") %><br>
+                  </div></td>
+          <td>
+            <div class="actions">
+              <%= form.submit %>
+            </div>
+          </td>  
+          <% end %>
+      <tr>
+      </tbody>
+    </table>  
+  </div>
+</div>
+</div>

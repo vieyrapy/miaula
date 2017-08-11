@@ -1,0 +1,29 @@
+<div class="container">
+<div class="row">
+  <div class="span4">
+
+    <p id="notice"><%= notice %></p>
+  </div>
+
+  <div class="span 8 ">
+    <table class="table table-striped">
+
+      <tbody>
+        <tr>
+            <td><p>
+              <strong>Nombredia:</strong>
+      			<%= @observacion.nombreDia %>
+            </p></td>
+
+           <td> <%= link_to edit_observacion_path(@observacion), class:" btn btn-info" do  %> 
+                <i class="glyphicon glyphicon-pencil"></i>
+                <% end %> </button> | 
+            <button type="button" class="btn btn-default"><%= link_to 'Atras', observacions_path %></button>
+          </td>
+        </tr>
+
+      </tbody>
+  </div>
+  </div>
+</div>
+

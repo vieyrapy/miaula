@@ -1,0 +1,18 @@
+<div class="container">
+<div class="row">
+	<div class="span4">
+			<h2 class="text-center text-muted">Editar Semestre</h2>
+
+	</div>
+
+	<div  class="span8">
+	
+			<%= render 'form', semestre: @semestre %>
+	
+			<%= link_to @semestre, class:"btn btn-success"  do %>
+			            <i class="glyphicon glyphicon-eye-open"></i>
+			           <% end %> |
+			<button type="button" class="btn btn-default"><%= link_to 'Atras', semestres_path %></button>
+	</div>
+</div>
+</div>

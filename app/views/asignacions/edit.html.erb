@@ -1,0 +1,8 @@
+<h1>Editar Asignacion</h1>
+
+<%= render 'form', asignacion: @asignacion %>
+
+<%= link_to @asignacion, class:"btn btn-success"  do %>
+            <i class="glyphicon glyphicon-eye-open"></i>
+           <% end %> |
+<button type="button" class="btn btn-default"><%= link_to 'Atras', asignacions_path %></button>

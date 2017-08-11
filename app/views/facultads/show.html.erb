@@ -1,0 +1,28 @@
+<div class="container">
+<div class="row">
+  <div class="span4">
+
+		<p id="notice"><%= notice %></p>
+</div>
+
+	<div class="span 8">
+		<table class="table table-striped">
+
+		  <tbody>
+		    <tr>
+		        <td><p>
+					  <strong>Nombre:</strong>
+					  <%= @facultad.nombre %>
+				</p></td>
+
+				<td><%= link_to edit_facultad_path(@facultad),  class: "btn btn-success" do %> <i class="glyphicon glyphicon-pencil"></i><% end %> |
+				<button type="button" class="btn btn-defauld"><%= link_to 'Atras', facultads_path %>
+				</button>
+				</td>
+			</tr>
+		</tbody>
+		</table>
+	</div>
+</div>
+  </div>
+</div>

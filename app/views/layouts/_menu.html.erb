@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MiAula</title>
+
+</head>
+
+<body>
+ 
+        <div class="container-fluid">
+            <a  href="http://localhost:3000">
+            <img src="http://localhost:3000/miaula_logo.png" width="100" height="61">
+          </a>
+        </div>
+
+      
+<nav class="navbar-inverse">
+  <div class="container-fluid">
+      <ul class="nav navbar-nav navbar-right">
+          <% if current_user %>        
+      </ul>
+
+  <div class="container-fluid">
+      <div class="navbar-inverse">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+      </div>
+    <!-- Si usuario esta registrado-->
+  
+    <!-- Rayitas de Menu -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav  navbar-right">
+         <li><a>Hola <%= current_user.nombre %></a></li>
+         <li><%= link_to 'Editar Datos',edit_user_registration_path %></li>
+        <li><%= link_to 'Salir', destroy_user_session_path, method: :delete %></li>
+      </ul>
+    </div>
+
+
+
+    <div class="navbar-inverse">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+      </div>
+    <!-- Si usuario esta registrado-->
+     <% elsif current_admin %>
+    <!-- Rayitas de Menu -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Asignacion de Aula", 'http://localhost:3000/asignacion_aulas' %></li>
+        <li><%= link_to "Aulas", 'http://localhost:3000/aulas' %></li>
+        <li><%= link_to "Registro de Carreras", 'http://localhost:3000/registro_carreras' %></li>
+        <li><%= link_to "Registro de Facultad", 'http://localhost:3000/facultads' %></li>
+        <li><%= link_to "Registro de Año", 'http://localhost:3000/anho_carreras' %></li>
+        <li><%= link_to "Dias", 'http://localhost:3000/observacions' %></li>
+        <li><%= link_to "Semestre", 'http://localhost:3000/semestres' %></li>  
+        <li>   
+                <ul class="nav navbar-nav ">
+                  <li role="presentation" class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" >
+                      <i class="glyphicon glyphicon-option-vertical"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a>Hola <%= current_admin.email %></a></li>
+                      <li><%= link_to 'Editar Admin',edit_admin_registration_path %></li>
+                      <li><%= link_to 'Salir', destroy_admin_session_path, method: :delete %></li>
+                    </ul>
+                  </li>
+                </ul>
+          </li>  
+      </ul>
+    </div>
+
+      <div>
+        
+      </div>
+
+
+    <% else %>
+        <li><%= link_to 'Alumno', new_user_session_path %></li>
+        <li><%= link_to "Administrar", new_admin_session_path %></li>
+    <% end %>
+
+</nav>
+
+
+</html>
+
+
+
+

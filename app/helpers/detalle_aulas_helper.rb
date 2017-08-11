@@ -1,0 +1,2 @@
+module DetalleAulasHelper
+end

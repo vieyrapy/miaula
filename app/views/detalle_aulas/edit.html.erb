@@ -1,0 +1,8 @@
+<h1>Editing Detalle Aula</h1>
+
+<%= render 'form', detalle_aula: @detalle_aula %>
+
+<%= link_to @detalle_aula, class:"btn btn-success"  do %>
+            <i class="glyphicon glyphicon-eye-open"></i>
+           <% end %> |
+<button type="button" class="btn btn-default"><%= link_to 'Atras', detalle_aulas_path %></button>

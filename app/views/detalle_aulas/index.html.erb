@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+<h2 class="text-center text-muted">Detalle Aulas</h2>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Observacion</th>
+      <th>Aula_id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @detalle_aulas.each do |detalle_aula| %>
+      <tr>
+        <td><%= detalle_aula.observacion %></td>
+        <td><%= detalle_aula.aula_id %></td>
+        <td><%= link_to 'Ver', detalle_aula %></td>
+        <td><%= link_to 'Editar', edit_detalle_aula_path(detalle_aula) %></td>
+        <td><%= link_to 'Eliminar', detalle_aula, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<button type="button" class="btn btn-default"><%= link_to 'Nuevo', new_detalle_aula_path %></button>

@@ -1,0 +1,82 @@
+<%= form_with(model: asignacion_aula, local: true) do |form| %>
+  
+
+  <% if asignacion_aula.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(asignacion_aula.errors.count, "error") %> prohibited this asignacion_aula from being saved:</h2>
+
+      <ul>
+      <% asignacion_aula.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="container">
+<div class="row">
+  <div class="span8">
+
+      <table class="table table-striped">
+
+      <thead>
+          <tr>
+            <th>Facultad</th>
+            <th>Carrera</th>
+            <th>Año</th>
+            <th>Semestre</th>
+            <th>Dias</th>
+            <th>Aula</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+              <td><div class="field">
+        
+                  <%= form.collection_select(:facultad_id, Facultad.all, :id, :nombre) %><br>
+                  </div></td><br>
+
+              <td><div class="field">
+
+                    <%= form.collection_select(:registro_carrera_id, RegistroCarrera.all, :id, :nombreCarrera) %><br>
+                    </div></td>
+
+              <td><div class="field">
+                    
+                    <%= form.collection_select(:anho_carrera_id, AnhoCarrera.all, :id, :anho) %><br>
+                    </div></td>
+
+               <td><div class="field">
+                    
+                    <%= form.collection_select(:semestre_id, Semestre.all, :id, :nombreSemestre) %><br>
+                    </div></td>            
+
+                
+              <td><div class="field">
+                    
+                    <%= form.collection_select(:observacion_id, Observacion.all, :id, :nombreDia) %><br>
+                    </div></td>
+
+               <td><div class="field">
+                    
+                    <%= form.collection_select(:aula_id, Aula.all, :id, :nombre) %><br>
+                    </div></td>
+
+
+
+    
+
+                    
+
+        <td><div class="actions">
+            <%= form.submit "Crear" %>
+          </div>
+        </td>
+      <% end %>
+      </tr>
+      </tbody>
+      </table>
+
+  </div>
+</div>
+</div>

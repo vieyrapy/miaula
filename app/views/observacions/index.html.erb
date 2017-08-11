@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="row">
+    <div class="span2">
+    </div>
+    <div class="span4">
+          <h2 class="text-center text-muted">Dias</h2>
+
+          <%= link_to new_observacion_path, class: "btn btn-primary" do %>
+
+              <i class="glyphicon glyphicon-plus"></i><% end %> 
+    </div>
+
+    <div class="span 8 ">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Dias</th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
+
+
+            <tbody>
+              <% @observacions.each do |observacion| %>
+                <tr>
+                  <td><%= observacion.nombreDia %></td>
+
+
+                  <td><%= link_to observacion, class:"btn btn-success"  do %>
+                      <i class="glyphicon glyphicon-eye-open"></i>
+                     <% end %></td>
+
+
+                     <td><%= link_to edit_observacion_path(observacion), class:" btn btn-info" do  %> 
+                        <i class="glyphicon glyphicon-pencil"></i>
+                      <% end %> </td>
+
+
+                        <td><%= link_to observacion, method: :delete, data: { confirm: 'Estas Seguro?' }, class:'btn btn-danger' do %> 
+                       <i class="glyphicon glyphicon-trash"></i>
+                       <% end %></td> 
+                    
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+
+          <br>
+
+          
+      </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,29 @@
+<%= form_with(model: semestre, local: true) do |form| %>
+  <% if semestre.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(semestre.errors.count, "error") %> prohibited this semestre from being saved:</h2>
+
+      <ul>
+      <% semestre.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="container">
+<div class="row">
+
+    <div class="span8">
+
+        <div class="field">
+          <%= form.text_field :nombreSemestre, id: :semestre_nombreSemestre, :class=>"form-control", placeholder: "Semestre" %>
+        </div>
+
+        <div class="actions">
+          <%= form.submit %>
+        </div>
+      <% end %>
+  </div>
+</div>
+</div>

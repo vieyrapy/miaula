@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  bloque: MyString
+  capacidad: MyString
+  observacion: MyString
+
+two:
+  nombre: MyString
+  bloque: MyString
+  capacidad: MyString
+  observacion: MyString

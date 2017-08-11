@@ -1,0 +1,56 @@
+<%= form_with(model: aula, local: true) do |form| %>
+  <% if aula.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(aula.errors.count, "error") %> prohibited this aula from being saved:</h2>
+
+      <ul>
+      <% aula.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="container">
+<div class="row">
+  <div class="span8">
+
+  <table class="table table-striped">
+
+  <tbody>
+    <tr>
+
+            <td>  <div class="field">
+                <%= form.text_field :nombre, id: :aula_nombre, :class=>"form-control", placeholder: "11A" %>
+              </div>
+            </td>
+
+
+            <td>  <div class="field">
+                <%= form.text_field :bloque, id: :aula_bloque, :class=>"form-control", placeholder: "Bloque" %>
+              </div>
+
+            </td>
+
+            <td><div class="field">
+                <%= form.text_field :capacidad, id: :aula_capacidad, :class=>"form-control", placeholder: "Capacidad" %>
+              </div>
+            </td>  
+
+            <td><div class="field">
+                <%= form.text_field :observacion, id: :aula_observacion, :class=>"form-control", placeholder: "observacion" %>
+              </div>
+            </td>
+          </div>
+          <td><div class="actions">
+              <%= form.submit %>
+            </div>
+          </td>
+        <% end %>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+</div>
+</div>

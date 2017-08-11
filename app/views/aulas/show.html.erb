@@ -1,0 +1,45 @@
+<div class="container">
+<div class="row">
+  <div class="span4">
+
+    <p id="notice"><%= notice %></p>
+  </div>
+  <div class="span 8 ">
+      <table class="table table-striped">
+
+        <tbody>
+          <tr>
+              <td><p>
+                <strong>Nombre:</strong>
+                <%= @aula.nombre %>
+              </p></td>
+
+              <td><p>
+                <strong>Bloque:</strong>
+                <%= @aula.bloque %>
+              </p></td>
+
+              <td><p>
+                <strong>Capacidad:</strong>
+                <%= @aula.capacidad %>
+              </p></td>
+
+              <td><p>
+                <strong>Observacion:</strong>
+                <%= @aula.observacion %>
+              </p></td>
+
+             <td> <%= link_to edit_aula_path(@aula), class:" btn btn-info" do  %> 
+                  <i class="glyphicon glyphicon-pencil"></i>
+                  <% end %> </button> | 
+              <button type="button" class="btn btn-default"><%= link_to 'Atras', aulas_path %></button>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+  </div>
+  </div>
+</div>
+
+
